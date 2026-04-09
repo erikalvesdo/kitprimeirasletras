@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 50% 97%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 210 60% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 90 45% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 30% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 25 85% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 25% 88%;
+    --input: 40 25% 88%;
+    --ring: 210 60% 45%;
+
+    --radius: 0.75rem;
+
+    --kit-blue: 210 60% 45%;
+    --kit-green: 90 45% 50%;
+    --kit-orange: 25 85% 53%;
+    --kit-yellow: 40 90% 55%;
+    --kit-red: 0 75% 50%;
+    --kit-cream: 40 50% 95%;
+    --kit-cream-dark: 40 40% 88%;
+
+    --font-heading: 'Nunito', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-gradient-rainbow {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--kit-blue)) 0%,
+      hsl(var(--kit-green)) 25%,
+      hsl(var(--kit-yellow)) 50%,
+      hsl(var(--kit-orange)) 75%,
+      hsl(var(--kit-red)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-cream-gradient {
+    background: linear-gradient(180deg, hsl(var(--kit-cream)) 0%, hsl(var(--kit-cream-dark)) 100%);
+  }
+
+  .shadow-playful {
+    box-shadow: 0 8px 30px -8px hsl(var(--kit-blue) / 0.2);
+  }
+
+  .shadow-offer {
+    box-shadow: 0 12px 40px -10px hsl(var(--kit-orange) / 0.35);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--kit-green) / 0.5); }
+  50% { box-shadow: 0 0 20px 8px hsl(var(--kit-green) / 0.2); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
